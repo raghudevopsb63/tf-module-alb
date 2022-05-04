@@ -3,5 +3,5 @@ output "ALB_ARN" {
 }
 
 output "LISTENER_ARN" {
-  value = aws_lb_listener.private.*.arn[0]
+  value = var.INTERNAL ? null : aws_lb_listener.private.*.arn[0]
 }
